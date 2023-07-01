@@ -9,14 +9,23 @@ current code supported python 3.10
 
 python tool for innodb page info   
 
-原来仓库代码很久没更新了，只支持python2。
+原来仓库代码 (https://github.com/happieme/py_innodb_page_info) 很久没更新了，只支持python2。
+
 本代码基于现在主流的python3（我环境是python 3.10)修改而成。
+
 如果有其它语法不支持，也是少数，简单修改即可。
 
-针对MySQL 8.0改造，新增了不支持的类型:
-	# mysql 8.0: storage/innobase/include/fil0fil.h:1184
-	'45be':u'R-tree Node',
-	'45bd':u'Tablespace SDI Index page'
+针对MySQL 8.0代码改造，
+
+代码参考:
+
+mysql 8.0: storage/innobase/include/fil0fil.h:1184
+
+新增了不支持的类型:
+
+'45be':u'R-tree Node',
+
+'45bd':u'Tablespace SDI Index page'
 
 
 ## 用法
