@@ -1,21 +1,22 @@
 # py3_innodb_page_info
 
-## 来源
-forked from https://github.com/happieme/py_innodb_page_info
-
-the old code can only supported by python2;
-
-current code supported python 3.10
-
-python tool for innodb page info   
+## 背景
 
 原来仓库代码 (https://github.com/happieme/py_innodb_page_info) 很久没更新了，只支持python2。
 
 本代码基于现在主流的python3（我环境是python 3.10)修改而成。
 
-如果有其它语法不支持，也是少数，简单修改即可。
+后续如果遇到Python新语法，不支持，也是少数，简单修改即可。
 
-针对MySQL 8.0代码改造，
+## 代码实现原理
+对idb数据文件按page(16K)进行逐页读取，取每个page中的type、offset等偏移，进行统计。
+
+## 主要改动
+* python3语法支持
+* MySQL 8.0 新的类型支持
+* 改为单文件脚本，方便直接 curl 下载
+
+针对MySQL 8.0代码做了异常改造（非全测）。
 
 代码参考:
 
@@ -29,7 +30,10 @@ mysql 8.0: storage/innobase/include/fil0fil.h:1184
 
 
 ## 用法
-首先 要安装python
+仓库地址: https://github.com/alexhe/py3_innodb_page_info
+直接下载: curl https://github.com/alexhe/py3_innodb_page_info/blob/main/py3_innodb_page_info.py
+
+首先 要安装python3，(MacOS 默认改为了python3了)
 
 用法:
 
