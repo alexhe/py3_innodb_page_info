@@ -134,9 +134,10 @@ def get_innodb_page_type(myargv):
 			ret[page_type] = 1
 		else:
 			ret[page_type] = ret[page_type] + 1
-	print("Total number of page: %d:"%fsize)
+	print("-" * 40)
+	print("Total number of page: %d:" % fsize)
 	for type in ret:
-		print("%s: %s"%(innodb_page_type[type],ret[type]))
+		print("%s: %s" % (innodb_page_type[type],ret[type]))
 
 if __name__ == '__main__':
 	myargv = myargv(argv)
